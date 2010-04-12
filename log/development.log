@@ -5787,3 +5787,3348 @@ ActionController::RoutingError (No route matches "/Reviews" with {:method=>:get}
   
 
 Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (46.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+  [4;36;1mSQL (93.8ms)[0m   [0;1mCREATE TABLE `movies` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `duration` int(11), `genre` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (46.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100309165036')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 15:26:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mMovie Load (0.0ms)[0m   [0;1mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1219ms (View: 766, DB: 0) | 200 OK [http://localhost/movies]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 15:26:40) [GET]
+  Parameters: {"commit"=>"Submit", "action"=>"index", "controller"=>"movies", "search"=>{"duration_lte"=>"23", "name_like"=>"Lassie", "order"=>"", "duration_gte"=>"1"}}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mMovie Load (62.5ms)[0m   [0;1mSELECT * FROM `movies` WHERE ((movies.duration <= 23) AND ((movies.duration >= 1) AND (movies.name LIKE '%Lassie%'))) [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1000ms (View: 266, DB: 63) | 200 OK [http://localhost/movies?search%5Border%5D=&search%5Bname_like%5D=Lassie&search%5Bduration_gte%5D=1&search%5Bduration_lte%5D=23&commit=Submit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 15:27:30) [GET]
+  Parameters: {"commit"=>"Submit", "action"=>"index", "controller"=>"movies", "search"=>{"duration_lte"=>"23", "name_like"=>"Lassie", "order"=>"", "duration_gte"=>"1"}}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mMovie Load (0.0ms)[0m   [0;1mSELECT * FROM `movies` WHERE ((movies.duration <= 23) AND ((movies.duration >= 1) AND (movies.name LIKE '%Lassie%'))) [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 938ms (View: 266, DB: 0) | 200 OK [http://localhost/movies?search%5Border%5D=&search%5Bname_like%5D=Lassie&search%5Bduration_gte%5D=1&search%5Bduration_lte%5D=23&commit=Submit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2010-03-11 15:27:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"movies"}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 969ms (View: 578, DB: 0) | 200 OK [http://localhost/movies/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2010-03-11 15:28:09) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"lcBzqDBaOJ9+WGYfhfmi38b/IXR3uqrMhx+GWsz86ts=", "movie"=>{"duration"=>"83 mins", "name"=>"LAssie runs again", "id"=>"", "genre"=>"Children"}, "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMovie Create (0.0ms)[0m   [0;1mINSERT INTO `movies` (`name`, `duration`, `created_at`, `updated_at`, `genre`) VALUES('LAssie runs again', 83, '2010-03-11 15:28:10', '2010-03-11 15:28:10', 'Children')[0m
+  [4;35;1mSQL (125.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/movies/1
+Completed in 781ms (DB: 125) | 302 Found [http://localhost/movies]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2010-03-11 15:28:12) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` WHERE (`movies`.`id` = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 766ms (View: 344, DB: 0) | 200 OK [http://localhost/movies/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 15:28:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 984ms (View: 531, DB: 0) | 200 OK [http://localhost/movies]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2010-03-11 15:28:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 781ms (View: 391, DB: 0) | 200 OK [http://localhost/movies/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2010-03-11 15:29:18) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"lcBzqDBaOJ9+WGYfhfmi38b/IXR3uqrMhx+GWsz86ts=", "movie"=>{"duration"=>"87", "name"=>"Free Willie", "id"=>"", "genre"=>"Adult"}, "controller"=>"movies"}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMovie Create (0.0ms)[0m   [0mINSERT INTO `movies` (`name`, `duration`, `created_at`, `updated_at`, `genre`) VALUES('Free Willie', 87, '2010-03-11 15:29:19', '2010-03-11 15:29:19', 'Adult')[0m
+  [4;36;1mSQL (187.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/movies/2
+Completed in 844ms (DB: 188) | 302 Found [http://localhost/movies]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2010-03-11 15:29:21) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"movies"}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mMovie Load (0.0ms)[0m   [0;1mSELECT * FROM `movies` WHERE (`movies`.`id` = 2) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 625ms (View: 188, DB: 0) | 200 OK [http://localhost/movies/2]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 15:29:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mMovie Load (0.0ms)[0m   [0;1mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1203ms (View: 750, DB: 0) | 200 OK [http://localhost/movies]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2010-03-11 15:29:32) [GET]
+  Parameters: {"action"=>"new", "controller"=>"movies"}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 781ms (View: 391, DB: 0) | 200 OK [http://localhost/movies/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2010-03-11 15:29:54) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"lcBzqDBaOJ9+WGYfhfmi38b/IXR3uqrMhx+GWsz86ts=", "movie"=>{"duration"=>"99", "name"=>"Salary man", "id"=>"", "genre"=>"Documentary"}, "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMovie Create (0.0ms)[0m   [0;1mINSERT INTO `movies` (`name`, `duration`, `created_at`, `updated_at`, `genre`) VALUES('Salary man', 99, '2010-03-11 15:29:54', '2010-03-11 15:29:54', 'Documentary')[0m
+  [4;35;1mSQL (140.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/movies/3
+Completed in 797ms (DB: 141) | 302 Found [http://localhost/movies]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2010-03-11 15:29:56) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` WHERE (`movies`.`id` = 3) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 609ms (View: 188, DB: 0) | 200 OK [http://localhost/movies/3]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 15:30:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1422ms (View: 953, DB: 0) | 200 OK [http://localhost/movies]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2010-03-11 15:38:06) [GET]
+  Parameters: {"action"=>"show", "id"=>"search", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` WHERE (`movies`.`id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Movie with ID=search):
+  app/controllers/movies_controller.rb:18:in `show'
+
+Rendered rescues/_trace (4031.3ms)
+Rendered rescues/_request_and_response (93.8ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 15:38:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1422ms (View: 953, DB: 0) | 200 OK [http://localhost/movies]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#edit (for 127.0.0.1 at 2010-03-11 15:38:28) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` WHERE (`movies`.`id` = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/edit
+Completed in 1031ms (View: 625, DB: 0) | 200 OK [http://localhost/movies/1/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#update (for 127.0.0.1 at 2010-03-11 15:38:33) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"lcBzqDBaOJ9+WGYfhfmi38b/IXR3uqrMhx+GWsz86ts=", "id"=>"1", "movie"=>{"duration"=>"83", "name"=>"LAssie runs again", "id"=>"1"}, "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` WHERE (`movies`.`id` = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/movies/1
+Completed in 625ms (DB: 0) | 302 Found [http://localhost/movies/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2010-03-11 15:38:35) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` WHERE (`movies`.`id` = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 609ms (View: 172, DB: 0) | 200 OK [http://localhost/movies/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 15:38:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1406ms (View: 969, DB: 0) | 200 OK [http://localhost/movies]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2010-03-11 15:38:46) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` WHERE (`movies`.`id` = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 609ms (View: 172, DB: 0) | 200 OK [http://localhost/movies/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 15:38:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1406ms (View: 969, DB: 0) | 200 OK [http://localhost/movies]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 15:43:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1422ms (View: 984, DB: 0) | 200 OK [http://localhost/movies]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 15:43:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 2078ms (View: 1641, DB: 0) | 200 OK [http://localhost/movies]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#destroy (for 127.0.0.1 at 2010-03-11 15:43:49) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"lcBzqDBaOJ9+WGYfhfmi38b/IXR3uqrMhx+GWsz86ts=", "id"=>"1", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` WHERE (`movies`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMovie Destroy (0.0ms)[0m   [0mDELETE FROM `movies` WHERE `id` = 1[0m
+  [4;36;1mSQL (78.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/movies
+Completed in 563ms (DB: 78) | 302 Found [http://localhost/movies/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 15:43:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mMovie Load (0.0ms)[0m   [0;1mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1516ms (View: 1047, DB: 0) | 200 OK [http://localhost/movies]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 15:45:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mMovie Load (0.0ms)[0m   [0;1mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+ERROR: compiling _run_erb_app47views47movies47index46html46erb RAISED compile error
+C:/Documents and Settings/Administrator/My Documents/college/GCD Year 4/Spring 2010/Emerging Technologies/Project2010/app/views/movies/index.html.erb:36: syntax error, unexpected ')'
+...(( link_to 'Review', movie,  ).to_s); @output_buffer.concat ...
+                              ^
+Function body:           def _run_erb_app47views47movies47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Listing movies</h1>\n\n\n"
+
+
+;  form_for @search do |f| ; @output_buffer.concat "\n<p>\n  "
+
+; @output_buffer.concat(( f.label :name_like, "Name" ).to_s); @output_buffer.concat " <br />\n  "
+; @output_buffer.concat(( f.text_field :name_like ).to_s); @output_buffer.concat "\n</p>\n"
+
+; @output_buffer.concat(( f.label :duration_gte, "Duration" ).to_s); @output_buffer.concat "\n"
+; @output_buffer.concat(( f.text_field :duration_gte, :size => 8).to_s); @output_buffer.concat " - "; @output_buffer.concat(( f.text_field :duration_lte, :size => 8).to_s); @output_buffer.concat "\n<p>\n\n</p>\n\n"
+
+
+
+
+; @output_buffer.concat(( f.submit "Submit" ).to_s); @output_buffer.concat "\n"
+; end; @output_buffer.concat "\n\n\n<table>\n  <tr>\n    <th>Id</th>\n    <th>Name</th>\n    <th>Duration</th>\n    <th>Genre</th>\n  </tr>\n\n"
+
+
+
+
+
+
+
+
+
+
+;  @movies.each do |movie| ; @output_buffer.concat "\n  <tr>\n    <td>"
+
+; @output_buffer.concat((h movie.id ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat((h movie.name ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat((h movie.duration ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat((h movie.genre ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Show', movie ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Edit', edit_movie_path(movie) ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Destroy', movie, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Review', movie,  ).to_s); @output_buffer.concat "</td>\n  </tr>\n"
+
+;  end ; @output_buffer.concat "\n</table>\n\n<br />\n\n"
+
+
+
+
+; @output_buffer.concat(( link_to 'New movie', new_movie_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: C:/Documents and Settings/Administrator/My Documents/college/GCD Year 4/Spring 2010/Emerging Technologies/Project2010/app/views/movies/index.html.erb:46:in `compile!'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:951:in `render_without_benchmark'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `send'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `custom'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `respond'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `each'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `respond'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:107:in `respond_to'
+C:/Documents and Settings/Administrator/My Documents/college/GCD Year 4/Spring 2010/Emerging Technologies/Project2010/app/controllers/movies_controller.rb:9:in `index'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+C:/Program Files/BitNami RubyStack/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+C:/Documents and Settings/Administrator/My Documents/college/GCD Year 4/Spring 2010/Emerging Technologies/Project2010/app/views/movies/index.html.erb:36: syntax error, unexpected ')'
+...(( link_to 'Review', movie,  ).to_s); @output_buffer.concat ...
+                              ^) on line #36 of app/views/movies/index.html.erb:
+33:     <td><%= link_to 'Show', movie %></td>
+34:     <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+35:     <td><%= link_to 'Destroy', movie, :confirm => 'Are you sure?', :method => :delete %></td>
+36:     <td><%= link_to 'Review', movie,  %></td>
+37:   </tr>
+38: <% end %>
+39: </table>
+
+    app/views/movies/index.html.erb:46:in `compile!'
+    app/controllers/movies_controller.rb:9:in `index'
+
+Rendered rescues/_trace (4984.4ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 15:46:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mMovie Load (0.0ms)[0m   [0;1mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1500ms (View: 1063, DB: 0) | 200 OK [http://localhost/movies]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2010-03-11 15:46:45) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"movies"}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mMovie Load (0.0ms)[0m   [0;1mSELECT * FROM `movies` WHERE (`movies`.`id` = 2) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 609ms (View: 188, DB: 0) | 200 OK [http://localhost/movies/2]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 15:48:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mMovie Load (0.0ms)[0m   [0;1mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+
+ActionView::TemplateError (undefined method `review_movie_path' for #<ActionView::Base:0x4e525c8>) on line #36 of app/views/movies/index.html.erb:
+33:     <td><%= link_to 'Show', movie %></td>
+34:     <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+35:     <td><%= link_to 'Destroy', movie, :confirm => 'Are you sure?', :method => :delete %></td>
+36:     <td><%= link_to 'Review', review_movie_path(movie) %></td>
+37:   </tr>
+38: <% end %>
+39: </table>
+
+    app/views/movies/index.html.erb:36
+    app/views/movies/index.html.erb:27:in `each'
+    app/views/movies/index.html.erb:27
+    app/controllers/movies_controller.rb:9:in `index'
+
+Rendered rescues/_trace (5234.4ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 16:48:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;35;1mMovie Columns (78.1ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mMovie Load (0.0ms)[0m   [0;1mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+
+ActionView::TemplateError (undefined method `review_movie_path' for #<ActionView::Base:0x5019ba4>) on line #36 of app/views/movies/index.html.erb:
+33:     <td><%= link_to 'Show', movie %></td>
+34:     <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+35:     <td><%= link_to 'Destroy', movie, :confirm => 'Are you sure?', :method => :delete %></td>
+36:     <td><%= link_to 'Review', review_movie_path(movie) %></td>
+37:   </tr>
+38: <% end %>
+39: </table>
+
+    app/views/movies/index.html.erb:36
+    app/views/movies/index.html.erb:27:in `each'
+    app/views/movies/index.html.erb:27
+    app/controllers/movies_controller.rb:9:in `index'
+
+Rendered rescues/_trace (5125.0ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 16:55:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mMovie Load (0.0ms)[0m   [0;1mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1422ms (View: 984, DB: 0) | 200 OK [http://localhost/movies]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-11 16:58:31) [GET]
+
+ActionController::RoutingError (No route matches "/review" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100311165247)
+  [4;36;1mSQL (109.4ms)[0m   [0;1mCREATE TABLE `reviews` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100311165247')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewController#index (for 127.0.0.1 at 2010-03-11 17:00:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"review"}
+
+ActionController::UnknownAction (No action responded to index. Actions: review):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 17:00:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mMovie Load (0.0ms)[0m   [0;1mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1313ms (View: 875, DB: 0) | 200 OK [http://localhost/movies]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewController#index (for 127.0.0.1 at 2010-03-11 17:05:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"review"}
+
+ActionController::UnknownAction (No action responded to index. Actions: review):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (15.6ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewController#index (for 127.0.0.1 at 2010-03-11 17:09:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"review"}
+
+ActionController::UnknownAction (No action responded to index. Actions: review):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewController#index (for 127.0.0.1 at 2010-03-11 17:10:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"review"}
+
+ActionController::UnknownAction (No action responded to index. Actions: review):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-11 17:11:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` [0m
+Rendering template within layouts/reviews
+Rendering reviews/index
+Completed in 906ms (View: 500, DB: 0) | 200 OK [http://localhost/reviews]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-11 17:13:32) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;36;1mReview Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+
+ActionView::TemplateError (undefined method `title' for #<Review id: nil, created_at: nil, updated_at: nil>) on line #8 of app/views/reviews/new.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :title %><br />
+8:     <%= f.text_field :title %>
+9:   </p>
+10:   <p>
+11:     <%= f.label :body %><br />
+
+    app/views/reviews/new.html.erb:8
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/reviews/new.html.erb:3
+    app/controllers/reviews_controller.rb:29:in `new'
+
+Rendered rescues/_trace (5843.8ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-11 17:15:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;35;1mReview Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+
+ActionView::TemplateError (undefined method `body' for #<Review id: nil, created_at: nil, updated_at: nil>) on line #12 of app/views/reviews/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :body %><br />
+12:     <%= f.text_area :body %>
+13:   </p>
+14:   <p>
+15:     <%= f.submit 'Create' %>
+
+    app/views/reviews/new.html.erb:12
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/reviews/new.html.erb:3
+    app/controllers/reviews_controller.rb:29:in `new'
+
+Rendered rescues/_trace (5843.8ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-11 17:17:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;36;1mReview Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+Completed in 797ms (View: 391, DB: 0) | 200 OK [http://localhost/reviews/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-11 17:19:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;35;1mReview Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+
+ActionView::TemplateError (undefined method `title_like' for #<Review id: nil, created_at: nil, updated_at: nil>) on line #8 of app/views/reviews/new.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :title %><br />
+8:     <%= f.text_field :title_like %>
+9:   </p>
+10:   <p>
+11:     <%= f.label :body %><br />
+
+    app/views/reviews/new.html.erb:8
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/reviews/new.html.erb:3
+    app/controllers/reviews_controller.rb:29:in `new'
+
+Rendered rescues/_trace (5843.8ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-11 17:21:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;36;1mReview Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+
+ActionView::TemplateError (undefined method `title_like' for #<Review id: nil, created_at: nil, updated_at: nil>) on line #8 of app/views/reviews/new.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :title_like, "Title" %><br />
+8:     <%= f.text_field :title_like %>
+9:   </p>
+10:   <p>
+11:     <%= f.label :body %><br />
+
+    app/views/reviews/new.html.erb:8
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/reviews/new.html.erb:3
+    app/controllers/reviews_controller.rb:29:in `new'
+
+Rendered rescues/_trace (5921.9ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-11 17:22:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` [0m
+Rendering template within layouts/reviews
+Rendering reviews/index
+Completed in 484ms (View: 94, DB: 0) | 200 OK [http://localhost/reviews]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-11 17:22:41) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;36;1mReview Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+
+ActionView::TemplateError (undefined method `title_like' for #<Review id: nil, created_at: nil, updated_at: nil>) on line #8 of app/views/reviews/new.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :title_like, "Title" %><br />
+8:     <%= f.text_field :title_like %>
+9:   </p>
+10:   <p>
+11:     <%= f.label :body %><br />
+
+    app/views/reviews/new.html.erb:8
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/reviews/new.html.erb:3
+    app/controllers/reviews_controller.rb:29:in `new'
+
+Rendered rescues/_trace (5843.8ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-11 17:26:23) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;35;1mReview Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+
+ActionView::TemplateError (undefined method `author' for #<Review id: nil, created_at: nil, updated_at: nil>) on line #13 of app/views/reviews/new.html.erb:
+10:   </p>
+11:   <p>
+12:     <%= f.label :author %><br />
+13:     <%= f.text_field :author %>
+14:   </p>
+15:   <p>
+16:     <%= f.label :event %><br />
+
+    app/views/reviews/new.html.erb:13
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/reviews/new.html.erb:3
+    app/controllers/reviews_controller.rb:29:in `new'
+
+Rendered rescues/_trace (5843.8ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100311173134)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'reviews' already exists: CREATE TABLE `reviews` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-11 17:35:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+
+NameError (uninitialized constant ReviewsController::Review):
+  app/controllers/reviews_controller.rb:5:in `index'
+
+Rendered rescues/_trace (3734.4ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2010-03-11 17:38:43) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 813ms (View: 47, DB: 16) | 200 OK [http://localhost/rails/info/properties]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 17:38:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1250ms (View: 813, DB: 0) | 200 OK [http://localhost/movies]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-11 17:39:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+
+NameError (uninitialized constant ReviewsController::Review):
+  app/controllers/reviews_controller.rb:5:in `index'
+
+Rendered rescues/_trace (3734.4ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-11 17:46:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+
+NameError (uninitialized constant ReviewsController::Review):
+  app/controllers/reviews_controller.rb:5:in `index'
+
+Rendered rescues/_trace (3812.5ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100311173134)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'reviews' already exists: CREATE TABLE `reviews` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100311173134)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'reviews' already exists: CREATE TABLE `reviews` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100311173134)
+  [4;36;1mSQL (203.1ms)[0m   [0;1mCREATE TABLE `reviews` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (109.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100311173134')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-11 18:12:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+
+NameError (uninitialized constant ReviewsController::Review):
+  app/controllers/reviews_controller.rb:5:in `index'
+
+Rendered rescues/_trace (3734.4ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100311173134)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-11 18:14:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+
+NameError (uninitialized constant ReviewsController::Review):
+  app/controllers/reviews_controller.rb:5:in `index'
+
+Rendered rescues/_trace (3828.1ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 18:23:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1203ms (View: 750, DB: 0) | 200 OK [http://localhost/movies]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-11 18:24:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+
+NameError (uninitialized constant ReviewsController::Review):
+  app/controllers/reviews_controller.rb:27:in `new'
+
+Rendered rescues/_trace (3734.4ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100311173134)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100311173134)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-11 18:37:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mMysql::Error: Table 'whatsonwhereie_development.reviews' doesn't exist: SELECT * FROM `reviews` [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'whatsonwhereie_development.reviews' doesn't exist: SELECT * FROM `reviews` ):
+  app/controllers/reviews_controller.rb:5:in `index'
+
+Rendered rescues/_trace (4375.0ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100311173134)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100311173134)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 20:04:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mMovie Load (0.0ms)[0m   [0;1mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1250ms (View: 813, DB: 16) | 200 OK [http://localhost/movies]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-11 20:04:40) [GET]
+  Parameters: {"commit"=>"Submit", "action"=>"index", "controller"=>"movies", "search"=>{"duration_lte"=>"", "name_like"=>"fr", "order"=>"", "duration_gte"=>""}}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mMovie Load (0.0ms)[0m   [0;1mSELECT * FROM `movies` WHERE (movies.name LIKE '%fr%') [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1047ms (View: 531, DB: 0) | 200 OK [http://localhost/movies?search%5Border%5D=&search%5Bname_like%5D=fr&search%5Bduration_gte%5D=&search%5Bduration_lte%5D=&commit=Submit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2010-03-11 20:04:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"movies"}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 781ms (View: 391, DB: 0) | 200 OK [http://localhost/movies/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100311200844)
+  [4;36;1mSQL (62.5ms)[0m   [0;1mCREATE TABLE `reviews` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `author` int(11), `event` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (93.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100311200844')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-11 20:10:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` [0m
+Rendering template within layouts/reviews
+Rendering reviews/index
+Completed in 813ms (View: 406, DB: 0) | 200 OK [http://localhost/reviews]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-11 20:10:29) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;35;1mReview Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+
+ActionView::TemplateError (undefined method `description' for #<Review:0x4f1cc74>) on line #16 of app/views/reviews/new.html.erb:
+13:   </p>
+14:   <p>
+15:     <%= f.label :description %><br />
+16:     <%= f.text_field :description %>
+17:   </p>
+18:   <p>
+19:     <%= f.submit 'Create' %>
+
+    app/views/reviews/new.html.erb:16
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/reviews/new.html.erb:3
+    app/controllers/reviews_controller.rb:29:in `new'
+
+Rendered rescues/_trace (5843.8ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-11 20:11:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;36;1mReview Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+
+ActionView::TemplateError (undefined method `description' for #<Review:0x507029c>) on line #16 of app/views/reviews/new.html.erb:
+13:   </p>
+14:   <p>
+15:     <%= f.label :description %><br />
+16:     <%= f.text_area :description %>
+17:   </p>
+18:   <p>
+19:     <%= f.submit 'Create' %>
+
+    app/views/reviews/new.html.erb:16
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/reviews/new.html.erb:3
+    app/controllers/reviews_controller.rb:29:in `new'
+
+Rendered rescues/_trace (5843.8ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-11 20:12:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;35;1mReview Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+
+ActionView::TemplateError (undefined method `description' for #<Review:0x4e133c8>) on line #16 of app/views/reviews/new.html.erb:
+13:   </p>
+14:   <p>
+15:     <%= f.label :description %><br />
+16:     <%= f.text_area :description %>
+17:   </p>
+18:   <p>
+19:     <%= f.submit 'Create' %>
+
+    app/views/reviews/new.html.erb:16
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/reviews/new.html.erb:3
+    app/controllers/reviews_controller.rb:29:in `new'
+
+Rendered rescues/_trace (5921.9ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateReviews (20100311200844)
+  [4;36;1mSQL (46.9ms)[0m   [0;1mDROP TABLE `reviews`[0m
+  [4;35;1mSQL (78.1ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100311200844'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100311201653)
+  [4;36;1mSQL (109.4ms)[0m   [0;1mCREATE TABLE `reviews` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `author` int(11), `event` varchar(255), `description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100311201653')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-11 20:17:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` [0m
+Rendering template within layouts/reviews
+Rendering reviews/index
+Completed in 797ms (View: 406, DB: 0) | 200 OK [http://localhost/reviews]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-11 20:17:48) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;35;1mReview Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+Completed in 953ms (View: 547, DB: 0) | 200 OK [http://localhost/reviews/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2010-03-11 22:53:55) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"lcBzqDBaOJ9+WGYfhfmi38b/IXR3uqrMhx+GWsz86ts=", "review"=>{"author"=>"James Joyce", "event"=>"A ideal day", "description"=>"It was a perfect day...."}, "controller"=>"reviews"}
+  [4;36;1mReview Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mReview Create (0.0ms)[0m   [0;1mINSERT INTO `reviews` (`created_at`, `author`, `updated_at`, `event`, `description`) VALUES('2010-03-11 22:53:56', 0, '2010-03-11 22:53:56', 'A ideal day', 'It was a perfect day....')[0m
+  [4;35;1mSQL (140.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/reviews/1
+Completed in 797ms (DB: 141) | 302 Found [http://localhost/reviews]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-11 22:53:58) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"reviews"}
+  [4;36;1mReview Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 1) [0m
+Rendering template within layouts/reviews
+Rendering reviews/show
+Completed in 766ms (View: 328, DB: 0) | 200 OK [http://localhost/reviews/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-11 22:54:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` [0m
+Rendering template within layouts/reviews
+Rendering reviews/index
+  [4;35;1mReview Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Completed in 797ms (View: 406, DB: 0) | 200 OK [http://localhost/reviews]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2010-03-11 22:54:11) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"reviews"}
+  [4;36;1mReview Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` WHERE (`reviews`.`id` = 1) [0m
+Rendering template within layouts/reviews
+Rendering reviews/show
+Completed in 609ms (View: 172, DB: 0) | 200 OK [http://localhost/reviews/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-11 22:54:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` [0m
+Rendering template within layouts/reviews
+Rendering reviews/index
+  [4;35;1mReview Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Completed in 797ms (View: 406, DB: 0) | 200 OK [http://localhost/reviews]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-11 22:54:19) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;36;1mReview Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+Completed in 766ms (View: 359, DB: 0) | 200 OK [http://localhost/reviews/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (171.9ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (203.1ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+  [4;35;1mSQL (78.1ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(255), `crypted_password` varchar(255), `password_salt` varchar(255), `persistence_token` varchar(255), `login_count` int(11), `last_request_at` datetime, `last_login_at` datetime, `current_login_at` datetime, `last_login_ip` varchar(255), `current_login_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (93.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100224171415')[0m
+Migrating to AddUsersPasswordResetFields (20100226104223)
+  [4;35;1mSQL (281.3ms)[0m   [0mALTER TABLE `users` ADD `perishable_token` varchar(255) DEFAULT '' NOT NULL[0m
+  [4;36;1mSQL (218.8ms)[0m   [0;1mALTER TABLE `users` ADD `email` varchar(255) DEFAULT '' NOT NULL[0m
+  [4;35;1mSQL (171.9ms)[0m   [0mCREATE INDEX `index_users_on_perishable_token` ON `users` (`perishable_token`)[0m
+  [4;36;1mSQL (171.9ms)[0m   [0;1mCREATE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100226104223')[0m
+Migrating to CreateMovies (20100309165036)
+  [4;36;1mSQL (62.5ms)[0m   [0;1mCREATE TABLE `movies` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `duration` int(11), `genre` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100309165036')[0m
+Migrating to CreateReviews (20100311201653)
+  [4;36;1mSQL (93.8ms)[0m   [0;1mCREATE TABLE `reviews` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `author` int(11), `event` varchar(255), `description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (140.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100311201653')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (31.3ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-13 11:50:29) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (250.0ms)
+Completed in 2625ms (View: 1641, DB: 0) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-13 11:50:56) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "authenticity_token"=>"RGJOhkfjp7ZbDlkiVdDjwbwsvi4FZ7gXwPxNn7LlKeg=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"higginsc", "email"=>"higginsc@ie.ibm.com"}}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (15.6ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'higginsc@ie.ibm.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'higginsc') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'f39bab59b87928fd954673b5d5972653367a5f7e0f54671c52955243f1b1fdbe4521693acad6efa2df62056e9327754d64ac60c954ab691d51aec3fa22836d26') LIMIT 1[0m
+  [4;36;1mUser Create (46.9ms)[0m   [0;1mINSERT INTO `users` (`last_request_at`, `created_at`, `crypted_password`, `updated_at`, `perishable_token`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `login`, `last_login_at`, `email`) VALUES('2010-03-13 11:51:01', '2010-03-13 11:51:01', '59075f644ea48dfaa8914484dcd6844c5db1f37bc8df66e5eba6df0b083f51a4c81a7f324a8e88df2f5e5d5d4c30c39f69f8ad91c801d408d52d1ce05e5e33a5', '2010-03-13 11:51:01', 'CbadMmMraHoQvyV43Afq', '127.0.0.1', '_wTiAkrLhHNJTwN5tl1a', '2010-03-13 11:50:58', 'f39bab59b87928fd954673b5d5972653367a5f7e0f54671c52955243f1b1fdbe4521693acad6efa2df62056e9327754d64ac60c954ab691d51aec3fa22836d26', 1, NULL, 'higginsc', NULL, 'higginsc@ie.ibm.com')[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Completed in 6109ms (DB: 125) | 302 Found [http://localhost/account]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-03-13 11:51:05) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (15.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'f39bab59b87928fd954673b5d5972653367a5f7e0f54671c52955243f1b1fdbe4521693acad6efa2df62056e9327754d64ac60c954ab691d51aec3fa22836d26') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.0ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-03-13 11:51:06', `perishable_token` = 'VsBmRi4oYg8qIebBmOZF', `last_request_at` = '2010-03-13 11:51:06' WHERE `id` = 1[0m
+  [4;36;1mSQL (109.4ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 2063ms (View: 266, DB: 125) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-03-13 11:51:14) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'f39bab59b87928fd954673b5d5972653367a5f7e0f54671c52955243f1b1fdbe4521693acad6efa2df62056e9327754d64ac60c954ab691d51aec3fa22836d26') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-03-13 11:51:15', `perishable_token` = 'ViuRSrK3DZPspOp49qMP', `last_request_at` = '2010-03-13 11:51:15' WHERE `id` = 1[0m
+  [4;35;1mSQL (109.4ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/users
+Rendering users/edit
+Rendered users/_form (187.5ms)
+Completed in 1969ms (View: 531, DB: 109) | 200 OK [http://localhost/account/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-03-13 11:51:23) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'f39bab59b87928fd954673b5d5972653367a5f7e0f54671c52955243f1b1fdbe4521693acad6efa2df62056e9327754d64ac60c954ab691d51aec3fa22836d26') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.0ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-03-13 11:51:24', `perishable_token` = 'JukzY5AJBowQVvHzPqOL', `last_request_at` = '2010-03-13 11:51:24' WHERE `id` = 1[0m
+  [4;36;1mSQL (140.6ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 1578ms (View: 94, DB: 141) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-13 11:51:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (15.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'f39bab59b87928fd954673b5d5972653367a5f7e0f54671c52955243f1b1fdbe4521693acad6efa2df62056e9327754d64ac60c954ab691d51aec3fa22836d26') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-03-13 11:51:41', `perishable_token` = 'OuhwqnnFCNuCGyYEvb3O', `last_request_at` = '2010-03-13 11:51:41' WHERE `id` = 1[0m
+  [4;35;1mSQL (125.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 1266ms (DB: 141) | 302 Found [http://localhost/users/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-03-13 11:51:44) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'f39bab59b87928fd954673b5d5972653367a5f7e0f54671c52955243f1b1fdbe4521693acad6efa2df62056e9327754d64ac60c954ab691d51aec3fa22836d26') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.0ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-03-13 11:51:45', `perishable_token` = 'IqJzNg4gzGxQOzHSx9LX', `last_request_at` = '2010-03-13 11:51:45' WHERE `id` = 1[0m
+  [4;36;1mSQL (62.5ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 1500ms (View: 109, DB: 63) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-03-13 11:52:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #17 of app/views/users/index.html.erb:
+14:     <th>Current login ip</th>
+15:   </tr>
+16: 
+17: <% @users.each do |user| %>
+18:   <tr>
+19:     <td><%=h user.login %></td>
+20:     <td><%=h user.crypted_password %></td>
+
+    app/views/users/index.html.erb:17
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (4546.9ms)
+Rendered rescues/_request_and_response (93.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-13 11:52:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'f39bab59b87928fd954673b5d5972653367a5f7e0f54671c52955243f1b1fdbe4521693acad6efa2df62056e9327754d64ac60c954ab691d51aec3fa22836d26') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-03-13 11:52:23', `perishable_token` = 'PVF68qL5jr_BEN9RnuEO', `last_request_at` = '2010-03-13 11:52:23' WHERE `id` = 1[0m
+  [4;35;1mSQL (140.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 1250ms (DB: 141) | 302 Found [http://localhost/users/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-03-13 11:52:26) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'f39bab59b87928fd954673b5d5972653367a5f7e0f54671c52955243f1b1fdbe4521693acad6efa2df62056e9327754d64ac60c954ab691d51aec3fa22836d26') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.0ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-03-13 11:52:27', `perishable_token` = 'vYieXDjyfxLdmYkkbrPR', `last_request_at` = '2010-03-13 11:52:27' WHERE `id` = 1[0m
+  [4;36;1mSQL (109.4ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 1500ms (View: 94, DB: 109) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-03-13 11:52:33) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'f39bab59b87928fd954673b5d5972653367a5f7e0f54671c52955243f1b1fdbe4521693acad6efa2df62056e9327754d64ac60c954ab691d51aec3fa22836d26') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-03-13 11:52:34', `perishable_token` = 'd5HQHqFcBD0T8tc9jcnr', `last_request_at` = '2010-03-13 11:52:34' WHERE `id` = 1[0m
+  [4;35;1mSQL (109.4ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/users
+Rendering users/edit
+Rendered users/_form (171.9ms)
+Completed in 1828ms (View: 438, DB: 109) | 200 OK [http://localhost/account/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-03-13 11:52:47) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"RGJOhkfjp7ZbDlkiVdDjwbwsvi4FZ7gXwPxNn7LlKeg=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"higginsc", "email"=>"higginsc@ie.ibm.com"}}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (15.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'f39bab59b87928fd954673b5d5972653367a5f7e0f54671c52955243f1b1fdbe4521693acad6efa2df62056e9327754d64ac60c954ab691d51aec3fa22836d26') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.0ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-03-13 11:52:48', `perishable_token` = 'rPVbBcnrojEKV00aJsdK', `last_request_at` = '2010-03-13 11:52:48' WHERE `id` = 1[0m
+  [4;36;1mSQL (46.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '1b3a01791637c9ea35e59cf25b2d721d445376772455453b2ce03ac0928865a9e7c0e9f16661d20e71b77007330bf00fa67e55fffb40e942a753df411204c13c' AND `users`.id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'f39bab59b87928fd954673b5d5972653367a5f7e0f54671c52955243f1b1fdbe4521693acad6efa2df62056e9327754d64ac60c954ab691d51aec3fa22836d26') LIMIT 1[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-03-13 11:52:48', `crypted_password` = '11008a94a53f0c4e284fabc1ec9602a5d3845d762352d085942446bef9ff5db5495aa65268f3400d79f48a9442f9a6b1c4b2f2a5adf4311906fabe797a4af9ee', `perishable_token` = 'Jpudbbf8ZFfx1x7w_k-F', `last_login_at` = '2010-03-13 11:50:58', `last_login_ip` = '127.0.0.1', `current_login_at` = '2010-03-13 11:52:48', `password_salt` = 'oSqvP-VSxsRj7BfuXbpP', `login_count` = 2, `persistence_token` = '1b3a01791637c9ea35e59cf25b2d721d445376772455453b2ce03ac0928865a9e7c0e9f16661d20e71b77007330bf00fa67e55fffb40e942a753df411204c13c', `last_request_at` = '2010-03-13 11:52:48' WHERE `id` = 1[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Completed in 2063ms (DB: 125) | 302 Found [http://localhost/account]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-03-13 11:52:51) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.0ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-03-13 11:52:52', `perishable_token` = 'hwDmBH-Mtd3votQZaqqy', `last_request_at` = '2010-03-13 11:52:52' WHERE `id` = 1[0m
+  [4;36;1mSQL (109.4ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 1500ms (View: 94, DB: 109) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EmailerController#new (for 127.0.0.1 at 2010-03-13 11:54:34) [GET]
+  Parameters: {"action"=>"new", "controller"=>"emailer"}
+
+ActionController::UnknownAction (No action responded to new. Actions: sendmail):
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-13 11:55:08) [GET]
+
+ActionController::RoutingError (No route matches "/emailers/new" with {:method=>:get}):
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-13 11:55:32) [GET]
+
+ActionController::RoutingError (No route matches "/new" with {:method=>:get}):
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EmailerController#new (for 127.0.0.1 at 2010-03-13 11:55:43) [GET]
+  Parameters: {"action"=>"new", "controller"=>"emailer"}
+
+ActionController::UnknownAction (No action responded to new. Actions: sendmail):
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EmailerController#index (for 127.0.0.1 at 2010-03-13 11:55:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"emailer"}
+Rendering emailer/index
+Completed in 656ms (View: 469, DB: 0) | 200 OK [http://localhost/emailer]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EmailerController#sendmail (for 127.0.0.1 at 2010-03-13 11:56:26) [POST]
+  Parameters: {"commit"=>"Send", "action"=>"sendmail", "authenticity_token"=>"RGJOhkfjp7ZbDlkiVdDjwbwsvi4FZ7gXwPxNn7LlKeg=", "controller"=>"emailer", "email"=>{"recipient"=>"higginsc2008@gmail.com", "subject"=>"hey", "message"=>"How it going, projet nmoving oin"}}
+Sent mail to higginsc2008@gmail.com
+
+Date: Sat, 13 Mar 2010 11:56:26 +0000
+From: no-reply@yourdomain.com
+To: higginsc2008@gmail.com
+Subject: hey
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hi!
+
+You have received a new email message from sender@yourdomain.com with a title
+
+This is title
+and following is the message:
+How it going, projet nmoving oin
+
+Thanks
+Completed in 3281ms (View: 16, DB: 0) | 200 OK [http://localhost/emailer/sendmail]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-13 12:13:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` [0m
+Rendering template within layouts/reviews
+Rendering reviews/index
+Completed in 891ms (View: 516, DB: 0) | 200 OK [http://localhost/reviews]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-13 12:13:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;36;1mReview Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+Completed in 953ms (View: 547, DB: 0) | 200 OK [http://localhost/reviews/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EmailerController#index (for 127.0.0.1 at 2010-03-13 12:17:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"emailer"}
+Rendering emailer/index
+Completed in 359ms (View: 188, DB: 0) | 200 OK [http://localhost/emailer]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing EmailerController#sendmail (for 127.0.0.1 at 2010-03-13 12:19:02) [POST]
+  Parameters: {"commit"=>"Send", "action"=>"sendmail", "authenticity_token"=>"RGJOhkfjp7ZbDlkiVdDjwbwsvi4FZ7gXwPxNn7LlKeg=", "controller"=>"emailer", "email"=>{"recipient"=>"higginsc2008@gmail.com", "subject"=>"new email", "message"=>"Project moving on"}}
+Sent mail to higginsc2008@gmail.com
+
+Date: Sat, 13 Mar 2010 12:19:03 +0000
+From: no-reply@yourdomain.com
+To: higginsc2008@gmail.com
+Subject: new email
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hi!
+
+You have received a new email message from sender@yourdomain.com with a title
+
+This is title
+and following is the message:
+Project moving on
+
+Thanks
+Completed in 3109ms (View: 16, DB: 0) | 200 OK [http://localhost/emailer/sendmail]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100311201653)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.3ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (31.3ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (31.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-13 13:23:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+
+NameError (uninitialized constant ReviewsController::Review):
+  app/controllers/reviews_controller.rb:5:in `index'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (3578.1ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-13 13:24:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mMovie Load (0.0ms)[0m   [0;1mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1250ms (View: 797, DB: 0) | 200 OK [http://localhost/movies]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-13 13:25:30) [GET]
+
+ActionController::RoutingError (No route matches "/review" with {:method=>:get}):
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-13 13:25:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+
+NameError (uninitialized constant ReviewsController::Review):
+  app/controllers/reviews_controller.rb:5:in `index'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (3484.4ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100311201653)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100311201653)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-13 13:47:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1750ms (View: 1313, DB: 0) | 200 OK [http://localhost/movies]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-13 13:47:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+
+NameError (uninitialized constant ReviewsController::Review):
+  app/controllers/reviews_controller.rb:5:in `index'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (3640.6ms)
+Rendered rescues/_request_and_response (93.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313135510)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'reviews' already exists: CREATE TABLE `reviews` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `movie` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2010-03-13 13:55:59) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 859ms (View: 31, DB: 0) | 200 OK [http://localhost/rails/info/properties]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-13 13:56:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` [0m
+Rendering template within layouts/reviews
+Rendering reviews/index
+Completed in 906ms (View: 500, DB: 16) | 200 OK [http://localhost/reviews]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-13 13:56:53) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;35;1mReview Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+
+ActionView::TemplateError (undefined method `movie' for #<Review:0x4b97770>) on line #12 of app/views/reviews/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :movie %><br />
+12:     <%= f.text_field :movie %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :review %><br />
+
+    app/views/reviews/new.html.erb:12
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/reviews/new.html.erb:3
+    app/controllers/reviews_controller.rb:29:in `new'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (5609.4ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-13 13:58:02) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;36;1mReview Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+
+ActionView::TemplateError (undefined method `movie' for #<Review:0x4c18730>) on line #12 of app/views/reviews/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :movie %><br />
+12:     <%= f.text_field :movie %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :review %><br />
+
+    app/views/reviews/new.html.erb:12
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/reviews/new.html.erb:3
+    app/controllers/reviews_controller.rb:29:in `new'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (5671.9ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-13 13:59:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mMovie Load (0.0ms)[0m   [0;1mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 750ms (View: 297, DB: 0) | 200 OK [http://localhost/movies]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-13 13:59:43) [GET]
+  Parameters: {"commit"=>"Submit", "action"=>"index", "controller"=>"movies", "search"=>{"duration_lte"=>"23", "name_like"=>"Free Willie", "order"=>"", "duration_gte"=>"2"}}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mMovie Load (109.4ms)[0m   [0;1mSELECT * FROM `movies` WHERE ((movies.duration <= 23) AND ((movies.duration >= 2) AND (movies.name LIKE '%Free Willie%'))) [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1078ms (View: 266, DB: 109) | 200 OK [http://localhost/movies?search%5Border%5D=&search%5Bname_like%5D=Free+Willie&search%5Bduration_gte%5D=2&search%5Bduration_lte%5D=23&commit=Submit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2010-03-13 13:59:56) [GET]
+  Parameters: {"action"=>"new", "controller"=>"movies"}
+  [4;35;1mMovie Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 1000ms (View: 609, DB: 0) | 200 OK [http://localhost/movies/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2010-03-13 14:01:43) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"RGJOhkfjp7ZbDlkiVdDjwbwsvi4FZ7gXwPxNn7LlKeg=", "movie"=>{"duration"=>"89", "name"=>"Free Willie", "id"=>"", "genre"=>"Adult"}, "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMovie Create (0.0ms)[0m   [0;1mINSERT INTO `movies` (`name`, `duration`, `created_at`, `updated_at`, `genre`) VALUES('Free Willie', 89, '2010-03-13 14:01:43', '2010-03-13 14:01:43', 'Adult')[0m
+  [4;35;1mSQL (46.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/movies/1
+Completed in 703ms (DB: 47) | 302 Found [http://localhost/movies]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2010-03-13 14:01:46) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` WHERE (`movies`.`id` = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 766ms (View: 344, DB: 0) | 200 OK [http://localhost/movies/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-13 14:01:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 984ms (View: 547, DB: 0) | 200 OK [http://localhost/movies]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-13 14:02:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` [0m
+Rendering template within layouts/reviews
+Rendering reviews/index
+Completed in 500ms (View: 78, DB: 0) | 200 OK [http://localhost/reviews]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-13 14:02:23) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;35;1mReview Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+
+ActionView::TemplateError (undefined method `movie' for #<Review:0x4d2f3bc>) on line #12 of app/views/reviews/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :movie %><br />
+12:     <%= f.text_field :movie %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :review %><br />
+
+    app/views/reviews/new.html.erb:12
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/reviews/new.html.erb:3
+    app/controllers/reviews_controller.rb:29:in `new'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (5609.4ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-13 14:08:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` [0m
+Rendering template within layouts/reviews
+Rendering reviews/index
+Completed in 500ms (View: 94, DB: 0) | 200 OK [http://localhost/reviews]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313135510)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'reviews' already exists: CREATE TABLE `reviews` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `movie` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-13 14:09:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;35;1mReview Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+
+ActionView::TemplateError (undefined method `movie' for #<Review:0x4ada440>) on line #12 of app/views/reviews/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :movie %><br />
+12:     <%= f.text_field :movie %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :review %><br />
+
+    app/views/reviews/new.html.erb:12
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/reviews/new.html.erb:3
+    app/controllers/reviews_controller.rb:29:in `new'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (5609.4ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313135510)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'reviews' already exists: CREATE TABLE `reviews` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `movie` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-13 14:11:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` [0m
+Rendering template within layouts/reviews
+Rendering reviews/index
+Completed in 469ms (View: 94, DB: 0) | 200 OK [http://localhost/reviews]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-13 14:12:42) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;35;1mReview Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+
+ActionView::TemplateError (undefined method `movie' for #<Review:0x4b870c8>) on line #12 of app/views/reviews/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :movie %><br />
+12:     <%= f.text_field :movie %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :review %><br />
+
+    app/views/reviews/new.html.erb:12
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/reviews/new.html.erb:3
+    app/controllers/reviews_controller.rb:29:in `new'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (5687.5ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313141645)
+  [4;36;1mSQL (125.0ms)[0m   [0;1mCREATE TABLE `reviews` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (93.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100313141645')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2010-03-13 14:17:43) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 813ms (View: 47, DB: 0) | 200 OK [http://localhost/rails/info/properties]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-13 14:17:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mSELECT * FROM `reviews` [0m
+Rendering template within layouts/reviews
+Rendering reviews/index
+Completed in 797ms (View: 406, DB: 0) | 200 OK [http://localhost/reviews]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-13 14:18:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;35;1mReview Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+
+ActionView::TemplateError (undefined method `author' for #<Review id: nil, created_at: nil, updated_at: nil>) on line #8 of app/views/reviews/new.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :author %><br />
+8:     <%= f.text_field :author %>
+9:   </p>
+10:   <p>
+11:     <%= f.label :movie %><br />
+
+    app/views/reviews/new.html.erb:8
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/reviews/new.html.erb:3
+    app/controllers/reviews_controller.rb:29:in `new'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (5609.4ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2010-03-13 14:25:48) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 781ms (View: 31, DB: 0) | 200 OK [http://localhost/rails/info/properties]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2010-03-13 14:25:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"movies"}
+  [4;36;1mMovie Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.0ms)[0m   [0mSELECT * FROM `movies` [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 1031ms (View: 578, DB: 0) | 200 OK [http://localhost/movies]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-13 14:26:06) [GET]
+
+ActionController::RoutingError (No route matches "/revies" with {:method=>:get}):
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-13 14:26:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+
+NameError (uninitialized constant ReviewsController):
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (2921.9ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313141645)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313141645)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313141645)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2010-03-13 14:30:13) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 813ms (View: 47, DB: 0) | 200 OK [http://localhost/rails/info/properties]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-13 14:30:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+  [4;36;1mReview Load (0.0ms)[0m   [0;1mMysql::Error: Table 'whatsonwhereie_development.reviews' doesn't exist: SELECT * FROM `reviews` [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'whatsonwhereie_development.reviews' doesn't exist: SELECT * FROM `reviews` ):
+  app/controllers/reviews_controller.rb:5:in `index'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (4203.1ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313141645)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313141645)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateReviews (20100313141645)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Unknown table 'reviews': DROP TABLE `reviews`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313141645)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313141645)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313143659)
+  [4;36;1mSQL (78.1ms)[0m   [0;1mCREATE TABLE `reviews` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100313143659')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-13 14:37:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+  [4;35;1mReview Load (15.6ms)[0m   [0mSELECT * FROM `reviews` [0m
+Rendering template within layouts/reviews
+Rendering reviews/index
+Completed in 797ms (View: 422, DB: 16) | 200 OK [http://localhost/reviews]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-13 14:37:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;36;1mReview Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+
+ActionView::TemplateError (undefined method `review' for #<Review id: nil, title: nil, created_at: nil, updated_at: nil>) on line #12 of app/views/reviews/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :review %><br />
+12:     <%= f.text_field :review %>
+13:   </p>
+14:   <p>
+15:     <%= f.submit 'Create' %>
+
+    app/views/reviews/new.html.erb:12
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/reviews/new.html.erb:3
+    app/controllers/reviews_controller.rb:29:in `new'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (5609.4ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2010-03-13 14:39:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"reviews"}
+  [4;35;1mReview Load (0.0ms)[0m   [0mSELECT * FROM `reviews` [0m
+Rendering template within layouts/reviews
+Rendering reviews/index
+Completed in 516ms (View: 125, DB: 0) | 200 OK [http://localhost/reviews]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-13 14:40:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+  [4;36;1mReview Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+Rendering template within layouts/reviews
+Rendering reviews/new
+
+ActionView::TemplateError (undefined method `review' for #<Review id: nil, title: nil, created_at: nil, updated_at: nil>) on line #12 of app/views/reviews/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :review %><br />
+12:     <%= f.text_field :review %>
+13:   </p>
+14:   <p>
+15:     <%= f.submit 'Create' %>
+
+    app/views/reviews/new.html.erb:12
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.12) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/reviews/new.html.erb:3
+    app/controllers/reviews_controller.rb:29:in `new'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (5687.5ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2010-03-13 14:45:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"reviews"}
+
+NameError (uninitialized constant ReviewsController::Review):
+  app/controllers/reviews_controller.rb:27:in `new'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (3468.8ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (109.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (46.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-15 16:12:08) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;35;1mUser Columns (406.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (171.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (171.9ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-03-15 16:12:18', `perishable_token` = '7ZO-4Mul0LtUtDPpKYMY', `last_request_at` = '2010-03-15 16:12:18' WHERE `id` = 1[0m
+  [4;35;1mSQL (125.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 10125ms (DB: 1031) | 302 Found [http://localhost/users/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-03-15 16:12:21) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (15.6ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-03-15 16:12:22', `perishable_token` = 'QaH7A2-PQSM55KQBhsjE', `last_request_at` = '2010-03-15 16:12:22' WHERE `id` = 1[0m
+  [4;36;1mSQL (171.9ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 2078ms (View: 578, DB: 188) | 200 OK [http://localhost/account]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-03-15 16:12:33) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (15.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-03-15 16:12:34', `perishable_token` = 'tbYA2UcDSqPLrOLV00bq', `last_request_at` = '2010-03-15 16:12:34' WHERE `id` = 1[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/users
+Rendering users/edit
+Rendered users/_form (250.0ms)
+Completed in 2125ms (View: 719, DB: 78) | 200 OK [http://localhost/account/edit]
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (31.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313143659)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (46.9ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (46.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (31.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-15 22:00:04) [GET]
+
+ActionController::RoutingError (No route matches "/landingpage" with {:method=>:get}):
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313143659)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-15 22:01:52) [GET]
+
+ActionController::RoutingError (No route matches "/landingpages" with {:method=>:get}):
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (46.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateReviews (20100313143659)
+  [4;36;1mSQL (187.5ms)[0m   [0;1mDROP TABLE `reviews`[0m
+  [4;35;1mSQL (109.4ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100313143659'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313143659)
+  [4;36;1mSQL (234.4ms)[0m   [0;1mCREATE TABLE `reviews` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (93.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100313143659')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313143659)
+Migrating to CreateWelcomes (20100315221937)
+  [4;36;1mSQL (93.8ms)[0m   [0;1mCREATE TABLE `welcomes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (93.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100315221937')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `welcomes`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `welcomes`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `welcomes`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomesController#index (for 127.0.0.1 at 2010-03-15 22:20:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcomes"}
+  [4;36;1mWelcome Load (0.0ms)[0m   [0;1mSELECT * FROM `welcomes` [0m
+Rendering template within layouts/welcomes
+Rendering welcomes/index
+Completed in 922ms (View: 516, DB: 0) | 200 OK [http://localhost/welcomes]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomesController#new (for 127.0.0.1 at 2010-03-15 22:21:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"welcomes"}
+  [4;35;1mWelcome Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `welcomes`[0m
+Rendering template within layouts/welcomes
+Rendering welcomes/new
+Completed in 828ms (View: 422, DB: 0) | 200 OK [http://localhost/welcomes/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomesController#index (for 127.0.0.1 at 2010-03-15 22:21:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcomes"}
+  [4;36;1mWelcome Load (0.0ms)[0m   [0;1mSELECT * FROM `welcomes` [0m
+Rendering template within layouts/welcomes
+Rendering welcomes/index
+Completed in 484ms (View: 94, DB: 0) | 200 OK [http://localhost/welcomes]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313143659)
+Migrating to CreateWelcomes (20100315221937)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `welcomes`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `welcomes`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `welcomes`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateWelcomes (20100315221937)
+  [4;36;1mSQL (46.9ms)[0m   [0;1mDROP TABLE `welcomes`[0m
+  [4;35;1mSQL (78.1ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100315221937'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313143659)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (46.9ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (31.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-03-16 20:41:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+
+ActionController::UnknownAction (No action responded to index. Actions: first and page):
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-03-16 21:01:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+
+ActionController::UnknownAction (No action responded to index. Actions: write_cache):
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-03-16 21:49:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2010-03-16 21:50:10) [GET]
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Completed in 844ms (View: 31, DB: 0) | 200 OK [http://localhost/rails/info/properties]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-03-16 21:52:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-03-16 21:56:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2010-03-16 22:03:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313143659)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100224171415)
+Migrating to AddUsersPasswordResetFields (20100226104223)
+Migrating to CreateMovies (20100309165036)
+Migrating to CreateReviews (20100313143659)
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `movies`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `movies`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `reviews`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `reviews`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-16 22:13:58) [GET]
+
+ActionController::RoutingError (No route matches "/welcome" with {:method=>:get}):
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LandingController#index (for 127.0.0.1 at 2010-03-16 22:14:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"landing"}
+
+ActionView::MissingTemplate (Missing template landing/index.erb in view path app/views):
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LandingController#index (for 127.0.0.1 at 2010-03-16 22:17:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"landing"}
+
+ActionView::MissingTemplate (Missing template landing/index.erb in view path app/views):
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2010-03-16 22:18:13) [GET]
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Completed in 797ms (View: 31, DB: 0) | 200 OK [http://localhost/rails/info/properties]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-03-17 08:59:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #17 of app/views/users/index.html.erb:
+14:     <th>Current login ip</th>
+15:   </tr>
+16: 
+17: <% @users.each do |user| %>
+18:   <tr>
+19:     <td><%=h user.login %></td>
+20:     <td><%=h user.crypted_password %></td>
+
+    app/views/users/index.html.erb:17
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (4328.1ms)
+Rendered rescues/_request_and_response (62.5ms)
+Rendering rescues/layout (internal_server_error)
